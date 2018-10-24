@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>No.</td>
+            <td>Name</td>
+            <td>Pico And Placa</td>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Actions</td>
+        </tr>
+
+    </thead>
+    <tbody>
+        {% if country_list %}
+        {% for country in country_list %}
+        <tr>
+            <td>{{ country.id }}</td>
+            <td>{{ country.name }}</td>
+            <td>{{ country.can_drive }}</td>
+            <td>{{ country.date }}</td>
+            <td>{{ country.time}}</td>
+            <td>
+                <a class="btn btn-primary" href="#">Editar</a>
+                <a class="btn btn-danger" href="#">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>Countries</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}
