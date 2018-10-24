@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>No.</td>
+            <td>Name</td>
+        </tr>
+
+    </thead>
+    <tbody>
+        {% if city_list %}
+        {% for city in city_list %}
+        <tr>
+            <td>{{ city.id }}</td>
+            <td>{{ city.name }}</td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>Cities</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}
